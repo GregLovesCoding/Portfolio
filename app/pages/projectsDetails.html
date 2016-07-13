@@ -1,0 +1,20 @@
+<div id="projectdetail">
+<div ng-repeat="picture in detailPics" id="projectspics" class="col-md-12 projectsection">
+            
+            <div class="projectBkg desktop">
+                    <img src="/images/projects/{{ project.name }}/{{ picture.loc }}.jpg" class="img-responsive-h"></div>
+            <div class="projectBkg mobile">
+                    <img src="/images/projects/{{ project.name }}/{{ picture.loc }}-mobile.jpg" class="img-responsive-h"></div>
+            <div id="projectOverview">
+                <div id="projectInfo">
+                    <div class="projectsubTitle overviewText"><a>{{ picture.desc }}</a></div>
+                    <div class="projectTitle overviewText"><a><b>{{ picture.name }}</b></a></div>
+                </div>
+            </div>
+    </div>
+<div class="scrolldownBtn"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
+    <div ng-repeat="movie in detailMovies" id="projectsmovs" class="col-md-12 projectsection">
+        <iframe width="80%" height="100%" ng-src="{{ movie.link | trusted }}" frameborder="0" allowfullscreen></iframe>
+    
+    </div>
+</div>

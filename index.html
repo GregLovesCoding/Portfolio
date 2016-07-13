@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- CSS -->
+	<!-- load bootstrap (bootswatch version) -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.1.1/readable/bootstrap.min.css">
+	<!--<link rel="stylesheet" href="style.css">-->
+	<link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="css/carousel.css">
+    
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/custom.css" />
+    <script type="text/javascript" src="js/modernizr.custom.79639.js"></script>
+    <noscript>
+       <link rel="stylesheet" type="text/css" href="css/styleNoJS.css" />
+    </noscript>
+	<!-- JS -->
+	<!-- load angular, ngRoute, ngAnimate -->
+	
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<!--    <script src="http://code.angularjs.org/1.2.13/angular.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-route.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-animate.js"></script>
+-->
+    <script src="http://code.angularjs.org/1.5.5/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.js"></script>
+    <script src="https://use.fontawesome.com/403fa78e90.js"></script>
+	<script src="app/app.js"></script>
+    <script src="app/animations.js"></script>
+    <base href="/">
+
+
+</head>
+
+<!-- apply our angular app -->
+<body ng-app="animateApp">
+<div id="background">
+    <img src="/images/bkg.jpg" class="bkgImage">
+    <div class="bkgOverlay bkgImage"></div>
+</div>
+<section id="header">
+    
+<nav class="navbar navbar-inverse">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+          
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="/"><b>Gregory</b>Peeters</a>
+    </div>
+    <div class="collapse navbar-collapse navbar-right" id="myNavbar">
+        <a class="navbar-brand brandmenu" href="/"><b>Gregory</b><br>Peeters</a>
+      <ul class="nav navbar-nav link-effect-2">
+          <li><a href="/projects/DocAdvisor"><span data-hover="Projects">Projects</span></a></li>
+        <li><a href="/about"><span data-hover="Contact">About</span></a></li>
+        <li><a href="/contact"><span data-hover="Contact">Contact</span></a></li>
+      </ul>
+      
+    </div>
+  </div>
+</nav>
+    
+    
+</section>
+    
+    
+<section id="main">
+    <div class="container">
+        <div id="view">
+            <div id="overlay"></div>
+            
+            <div class="page {{ pageClass }}" ng-view>
+            
+            
+            </div>
+            <div ng-controller="nav" id="navButtons" >
+            <div class="arrows arrow-left dispOff">
+                <a href="/projects/{{ projectLeft }}" id="arrow-left" class="arrow"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+            </div>
+            <div class="arrows arrow-right">
+                <a href="/projects/{{ projectRight }}"id="arrow-left" class="arrow"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+            </div>
+            </div>
+             <div ng-controller="projectBar" id="viewProjectSection" class="col-md-3">
+                <div id="contactBkg" class="{{ projectClass }}"><img id="viewpBkgimg" src="/images/contact2.jpg" class="img-responsive-h"></div>
+                 <div id="aboutBkg" class="{{ projectClass }}"><img id="viewpBkgimg" src="/images/about3.jpg" class="img-responsive-h"></div>
+                 <div id="viewProjects" >
+                    <a  id="projectButton" href="projects/DocAdvisor" class="bannerhead {{ projectClass }}"><div class="banner">View</div>
+                        <b>{{ navigate }}</b>
+                        <div class="projectTitle">{{ currentProject.name }}</div>
+                
+                </a></div>
+                <ul id="projectList" class="list-unstyled {{ projectClass }}">
+                    <li ng-repeat="project in projectList">
+                        <a id="{{ project.name }}" href="/projects/{{ project.name }}">{{ project.name }}</a>
+                    </li>
+                </ul>
+                 <div id="projectDescr" class="projDesc {{ projectClass }}" >
+                    <a class="descr">{{ currentProject.descr }}</a>
+                 </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</section>
+
+    
+<section id="footer" ng-controller="footer" >
+    <div class="container {{ projClass }}" >
+        <div class="back">
+                <a href="{{ previousPage }}"id="back-btn" class=""><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+            </div>
+        <div class="title">
+                <a href="projects/DocAdvisor"id="navTitle" class="">{{ navTitle }}</a>
+            </div>
+    </div>
+</section>   
+
+    
+		
+</body>
+</html>

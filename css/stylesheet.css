@@ -1,0 +1,1538 @@
+
+@font-face {
+    font-family: mHairline;
+    src: url(/fonts/Montserrat-Hairline.otf);
+}
+@font-face {
+    font-family: mBlack;
+    src: url(/fonts/Montserrat-Black.otf);
+}
+
+.page.ng-enter, 
+.page.ng-leave
+{ 
+    -webkit-transition: 0.8s cubic-bezier(1, -0.1, 0.44, 1.32) all;
+    -moz-transition:  0.8s cubic-bezier(1, -0.1, 0.44, 1.32) all;
+    -ms-transition:  0.8s cubic-bezier(1, -0.1, 0.44, 1.32) all;
+    -o-transition: 0.8s cubic-bezier(1, -0.1, 0.44, 1.32) all;
+    transition: 0.8s cubic-bezier(1, -0.1, 0.44, 1.32) all;
+} 
+
+/*-------------------------------------------------------------------*/
+
+.page-projects.ng-enter {
+    left: -85%;
+}
+ 
+.page-projects.ng-leave {
+    left: 0;
+}
+
+.page-projects.ng-enter.enterleft {
+    left: 100%;
+}
+ 
+.page-projects.ng-leave {
+    left: 0;
+}
+
+.page-projects.ng-enter.ng-enter-active {
+    left: 0;
+}
+ 
+
+.page-projects.ng-leave.ng-leave-active{
+    left: 0;
+}
+
+
+
+/*-------------------------------------------------------------------*/
+
+.page-home.ng-enter {
+    left: -100%;
+}
+ 
+.page-home.ng-leave {
+    left: 0;
+}
+
+
+.page-home.ng-enter.ng-enter-active {
+    left: 0;
+}
+ 
+
+.page-home.ng-leave.ng-leave-active{
+    left: 0%;
+}
+
+/*-------------------------------------------------------------------*/
+
+.page-projectOverview.ng-enter {
+    top: 100%;
+}
+ 
+.page-projectOverview.ng-leave {
+    top: 0;
+}
+
+
+.page-projectOverview.ng-enter.ng-enter-active {
+    top: 0;
+}
+ 
+
+.page-projectOverview.ng-leave.ng-leave-active{
+    top: 0;
+}
+
+/*-------------------------------------------------------------------*/
+
+.page-contact.ng-enter {
+    left: 100%;
+}
+ 
+.page-contact.ng-leave {
+    left: 0;
+}
+
+
+.page-contact.ng-enter.ng-enter-active {
+    left: 0;
+}
+ 
+
+.page-contact.ng-leave.ng-leave-active{
+    left: 0%;
+}
+
+/*-------------------------------------------------------------------*/
+
+.page-about.ng-enter {
+    left: -100%;
+}
+ 
+.page-about.ng-leave {
+    left: 0;
+}
+
+
+.page-about.ng-enter.ng-enter-active {
+    left: 0;
+}
+ 
+
+.page-about.ng-leave.ng-leave-active{
+    left: 0%;
+}
+
+
+/*-------------------------------------------------------------------*/
+/* Scroll bar
+============================================================================= */
+
+/* Let's get this party started */
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+/*
+ Track 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+ 
+* Handle 
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(255,0,0,0.8); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(255,0,0,0.4); 
+}
+*/
+
+/* BASE STYLES
+============================================================================= */
+
+html{
+    overflow: hidden;
+}
+body{
+    
+    height:100vh!important;
+    background-color: #252525;
+    overflow: hidden;
+}
+
+a{
+    
+    font-family: mhairline;
+    color: white;
+}
+
+
+
+a:hover, a:focus {
+    color: white;
+    text-decoration: none;
+}
+
+b{
+    
+    font-family: mBlack;
+    font-weight: normal!important;
+    
+}
+
+#header{
+    
+        /*height: 10vh;*/
+}
+.container{
+    
+    position: relative;
+    height: 100%;
+    width: 80%;
+    padding: 0;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+
+}
+
+#header .container{
+    
+    height: 10vh;
+    padding-top: 1vh;
+}
+
+#main .container{
+    
+    overflow: hidden;
+    height: 80vh;
+
+    
+}
+
+#back-btn{
+    display: none;
+}
+
+#footer{
+    
+    height:9.8vh;
+    
+}
+
+#background{
+    
+}
+
+.bkgImage {
+    z-index: -10;
+    width: 100%;
+    min-width: 100%;
+    position: fixed;
+    min-height: 100vh;
+}
+
+.bkgOverlay{
+    
+    background-color: rgba(37, 37, 37, 0.85);
+}
+
+.mobile{
+    
+    display: none;
+}
+
+.desktop{
+    
+    display: block;
+}
+
+.img-responsive-h {
+    min-height: 80vh!important;
+    max-height: 90vh!important;
+    max-width: 200%!important;
+    min-width: 100%!important;
+}
+
+
+.img-responsive-w{
+    
+   min-height: 80vh!important;
+    max-width: 200%!important;
+    min-width: 100%;
+    max-height: 200%;
+        
+}
+
+
+section{
+    
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    
+}
+
+#view{
+    
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.row{
+    
+    margin:0;
+    padding: 0;
+}
+
+.page{
+    
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+}
+
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+
+/* NAVIGATION
+============================================================================= */
+
+nav a{
+    
+    text-transform: uppercase;
+    color: #fff!important;
+}
+
+.navbar-brand{
+    
+    margin-left:0px!important;
+    font-size: 24px;
+}
+
+.navbar-collapse .brandmenu{
+        display: none;
+    }
+.navbar-collapse.in .brandmenu {
+    display: block!important;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    margin: 40vh 0 0 0!important;
+}
+.navbar-toggle {
+    z-index: 300!important;
+}
+
+.navbar-collapse.in .navbar-nav {
+    float:left;
+    width: 100%;
+    
+}
+
+.navbar {
+    
+    margin-bottom: 0;
+    min-height: 10vh;
+}
+
+.navbar-right{
+    
+    padding-right: 0!important;
+}
+
+.navbar-nav>li>a:hover {
+    
+    border: 0px solid transparent;
+    font-family: mBlack;
+    padding-left: 11px;
+
+}
+
+.link-effect-2{
+	overflow: hidden;
+	li a {
+		overflow: hidden;
+		padding: 20px;
+		height: 1em;
+		color: #797878;
+		font-weight: 400;
+		 span {
+			position: relative;
+			display: inline-block;
+			@include transition(.3s);
+			&::before {
+				color: white;
+				position: absolute;
+				top: 100%;
+				content: attr(data-hover);
+				font-weight: 800;
+				@include transform(translate3d(0,0,0));
+			}
+		}
+		&:hover{
+			span{
+				@include transform(translateY(-100%));
+			}
+		}
+	}
+} 
+
+
+
+/* HOMESCREEN
+============================================================================= */
+
+.bkg-attachment{
+    
+    width: 100%;
+    height: 100px;
+    background:url(images/side.png);
+    
+}
+#overlay{
+    pointer-events: none;
+    top: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    -webkit-box-shadow: inset 0px 2px 128px 6px rgba(0,0,0,0.15);
+    -moz-box-shadow: inset 0px 2px 128px 6px rgba(0,0,0,0.15);
+    box-shadow: inset 0px 2px 128px 6px rgba(0,0,0,0.15);
+}
+
+
+#carouselSection {
+    float: right;
+    right: 23%;
+    width: 77%;
+    transition: right 0.8s cubic-bezier(1, -0.1, 0.44, 1.32);
+}
+
+.carousel-control.right{
+    
+    width: 30%;
+}
+
+/* PROJECTBAR 
+============================================================================= */
+
+#viewProjectSection {
+    background-color: white;
+    height: 80vh;
+    position: absolute;
+    overflow: hidden;
+    width: 36%;
+    right: -6%;
+    box-shadow: 10px 0px 100px rgba(8, 8, 8, 0.48);
+    -webkit-transform: skew(-10deg);
+    -moz-transform: skew(-10deg);
+    -o-transform: skew(-10deg);
+    transition: right 0.8s cubic-bezier(1, -0.1, 0.44, 1.32);
+}
+
+#viewProjects{
+    position: relative;
+    margin-left: -10%;
+    -webkit-transform: skew(10deg);
+    -moz-transform: skew(10deg);
+    -o-transform: skew(10deg);
+}
+
+#contactBkg{
+    
+    z-index: -20;
+    position: absolute;
+    width: 140%;
+    left: -13%;
+    
+    -webkit-transform: skew(10deg);
+    -moz-transform: skew(10deg);
+    -o-transform: skew(10deg);
+    opacity: 0.01;
+}
+
+#contactBkgimg{
+    
+    float: left;
+    
+}
+
+#contactBkg.contactView{
+    
+    opacity: 1;
+    
+   
+}
+#aboutBkg{
+    
+    z-index: -20;
+    position: absolute;
+    width: 140%;
+    left: -13%;
+    
+    -webkit-transform: skew(10deg);
+    -moz-transform: skew(10deg);
+    -o-transform: skew(10deg);
+    opacity: 0.01;
+}
+
+#aboutBkgimg{
+    
+    float: left;
+    
+}
+
+#aboutBkg.aboutView{
+    
+    opacity: 1;
+    
+   
+}
+
+.bannerhead{
+    
+    position: absolute;
+    margin: 0 5%;
+    margin-top: 34vh;
+    width: 60%;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+    font-size: 36px;
+    transition: all 0.4s cubic-bezier(0.07, 0.52, 0.79, 1.28);
+}
+.banner{
+    
+    color: black;
+    transition: all 0.2s ease-out;
+    pointer-events: visible;
+}
+
+.bannerhead:hover{
+    
+    color: black;
+    text-decoration: none;
+    font-family: mBlack; 
+}
+.bannerhead b{
+    
+  color:black;
+     
+}
+.bannerhead:hover b{
+    
+    font-family: mHairline;
+     
+}
+
+
+.projects{
+    
+    right: auto;
+    left: -6.1%;
+    
+    
+}
+
+.viewProjects{
+    
+    margin:5%!important;
+    
+}
+
+#viewProjects .projectView, #viewProjects .contactView, #viewProjects .aboutView {
+    
+    margin: -20px 0 0 0;
+    right: 15%;
+    width: inherit;
+    max-height: 5px;
+    
+    
+}
+#viewProjects .projectView .banner, #viewProjects .contactView .banner, #viewProjects .aboutView .banner{
+    
+    opacity:0;
+}
+
+#viewProjects .projectView b, #viewProjects .contactView .b, #viewProjects .aboutView .b{
+    
+    float:right;
+    
+}
+
+#viewProjects .projectView b:hover{
+    
+    font-family: mBlack;
+    
+}
+
+#projectList.projectView{
+    
+    opacity: 1;
+    transition-delay: 0.8s;
+}
+
+#viewProjects .projectDetailView{
+    
+    margin: -20px 0 0 0;
+    right: 15%;
+    width: inherit;
+    
+    
+}
+#viewProjects .projectDetailView .banner{
+    
+    opacity:0;
+    pointer-events: none;
+}
+
+#viewProjects .projectDetailView b {
+    font-family: mHairline;
+    float: right;
+    width: 100%;
+    text-align: right;
+}
+
+#projectList.projectDetailView{
+    
+    pointer-events: none;
+    opacity: 0;
+    transition-delay: 0s;
+    
+}
+
+#viewProjects .projectDetailView .projectTitle {
+    opacity: 1;
+    pointer-events: visible;
+    display: block;
+    font-size: 70%;
+    float: right;
+    
+    text-align: right;
+}
+
+
+#viewProjects .projectTitle{
+    
+    pointer-events: none;
+    display:none;
+    opacity: 0;
+    transition: all 0.8s ease-out; 
+    font-family: mBlack;
+   
+}
+
+#projectDescr.projectDetailView.projDesc{
+    
+    opacity: 1;
+    pointer-events: visible;
+    display: block;
+   
+}
+#viewProjectSection .projDesc{
+    
+    pointer-events: none;
+    display:none;
+    opacity: 0;
+    
+   
+}
+#projectDescr{
+float: right;
+    text-align: right;
+    width: 75%;
+    margin-right: 15%;
+}
+#projectDescr a{
+    
+    font-family: mHairline;
+    color:black;
+    
+}
+
+#projectDescr a:hover{
+    
+    
+    color:black;
+}
+
+#projectList {
+    margin-top: 100px;
+    margin-right: 20%;
+    opacity: 0;
+    pointer-events: visible;
+    transition: all 0.8s ease-out;
+    transition-delay: 0s;
+}
+
+#projectList li {
+    
+   
+}
+
+#projectList li a{
+    
+    color: black;
+    float: right;
+    width: 100%;
+    text-align: right;
+}
+
+#projectList li a:hover{
+    
+    color:black;
+    float: right;
+    font-family: mblack;
+}
+
+#projectList li .active{
+    
+    color:black;
+    float: right;
+    font-family: mblack;
+}
+
+
+#projectList li {
+    line-height: 1.8;
+}
+
+/* PROJECTS SCREEN
+============================================================================= */
+
+.projectBkg {
+    
+    overflow: hidden;
+}
+
+
+
+#projectInfo{
+    position: absolute;
+    bottom: 0;
+    float: right;
+    right: 0;
+}
+
+#projectOverview{
+    
+    position: absolute;
+    top: 0;
+    height: 80vh;
+    right: 0;
+    width: 100%;
+        
+}
+
+
+
+.projectButton{
+    
+    padding-bottom: 0px!important;
+    font-size: 18px;
+    margin-bottom: 10px
+   
+}
+
+.projectButton a {
+    padding: 5px 10px;
+    color: rgb(255, 255, 255);
+    box-shadow: rgba(255, 255, 255, 0.79) 0 0px 0px 1px inset;
+    border-radius: 4px;
+    transition: all 600ms cubic-bezier(0.8, 0.01, 0.22, 1.09);
+    font-size: 16px;
+    font-family: mblack;
+}
+
+.projectButton a:hover {
+    color: rgba(0, 0, 0, 0.8);
+    box-shadow: rgba(255, 255, 255, 0.9) 0 0px 0px 40px inset;
+    
+}
+
+
+
+.projectsubTitle{
+    
+    padding-bottom: 0px!important;
+    font-size: 24px;
+    margin-bottom: -5px;
+    
+}
+
+.projectTitle{
+    
+    font-size: 44px;
+}
+
+.projectTitle a b{
+    
+    line-height: 1.2;
+    display: block;
+}
+    
+
+.overviewText{
+    text-shadow: 1px 1px 1px #272727;
+    width: 100%;
+    text-transform: uppercase;
+    text-align: center;
+    padding-bottom: 20px;
+    padding-right: 20px;
+}
+
+.arrows{
+    position: absolute;
+    top:0;
+    height: 100%;
+    width: 100px;
+    z-index: 100;
+    display: none;
+}
+.arrow-right{
+    
+    right: 0;
+    
+    
+}
+.arrow-left {
+    left: 0;
+    margin-left: 30%;
+    
+}
+.arrow-left a{
+        left: 30%;
+    border-right: none;
+    border-top: none;
+    
+}
+.arrow-right a{
+    right: 50%;
+    border-left: none;
+    border-bottom: none;
+    
+}
+
+.arrow{
+    
+    
+      position: absolute;
+    z-index: 2000;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    border: 8px solid rgba(255, 255, 255, 0.6);
+    text-indent: -90000px;
+    margin-top: -40px;
+    cursor: pointer;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    
+}
+.arrow:hover{
+    
+    color: white;
+}
+
+.arrow i{
+    
+}
+
+.home .title{
+        
+        display: none;
+    }
+    
+    .details .title{
+        
+        display: none;
+    }
+
+.title{
+    
+    display: none;
+}
+
+/* PROJECTS DETAIL
+============================================================================= */
+
+#projectdetail .projectBkg {
+    
+    width: 80%;
+    margin-left: 20%;
+    overflow: hidden;
+}
+
+#projectdetail .img-responsive-h {
+    min-height: 80vh!important;
+    max-height: 90vh!important;
+    
+    min-width: 100%!important;
+}
+#projectdetail{
+    height: 80vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.scrolldownBtn {
+    position: absolute;
+    top: 75vh;
+    width: 100%;
+}
+
+.scrolldownBtn i{
+    text-align: center;
+    width: 100%;
+    display: block;
+    color: white;
+    font-size: 5vh;
+}
+
+.projectsection{
+    
+    
+    
+}
+#projectsmovs{
+    
+    position: absolute;
+    
+}
+#projectsmovs iframe{
+    
+    margin-left: 23.5%;
+    width: 76.5%;
+    height: 80vh;
+    
+}
+
+/* SCROLL JS
+============================================================================= */
+
+
+#scroll{
+    
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+
+    
+}
+
+#scrollpage{
+    height: 300%;
+    
+    
+}
+
+
+/* About
+============================================================================= */
+
+.page-about{
+    overflow-y: scroll;
+    height: 80vh;
+}
+
+#aboutContainer {
+    right: 0;
+    top: 0;
+    
+    text-align: center;
+    width: 80%;
+    padding: 10vh 10% 5vh 15%;
+   
+    
+    float: right;
+}
+#skills .row{
+    margin: 0 10%;
+    padding-bottom: 5vh;
+}
+#aboutText {
+    padding: 0 10%;
+    font-family: mHairline;
+    font-size: 16px;
+    color: #000000;
+    text-shadow: 1px 0px 1px rgba(0, 0, 0, 0.29);
+    float: left;
+    margin-bottom: 5%;
+}
+
+#aboutTitle {
+    padding: 0 10%;
+    font-family: mHairline;
+    font-size: 22px;
+    color: #292929;
+    float: left;
+    margin-bottom: 5%;
+    width: 100%
+}
+
+#aboutmainTitle {
+    font-family: mBlack;
+    font-size: 42px;
+    width: 100%;
+    color: #292929;
+    /* padding: 15%; */
+    float: left;
+    
+}
+.skillTitle{
+    width: 100%;
+    font-family: mBlack;
+    text-align: center;
+    color: #292929;
+    font-size: 32px;
+    
+}
+
+#skills{
+    background: white;
+    margin-left: 20%;
+}
+
+.skillIcon {
+    font-size: 60px!important;
+    line-height: 100px!important;
+    color: white;
+}
+
+.back{
+    
+    
+    width: 100%;
+    text-align: center;
+    height: 100%;
+}
+.skilliconTitle{
+    
+   
+    width: 100%;
+    
+    margin-top: 20px;
+}
+.skilliconTitle div{
+    
+    color: #282828;
+    width: 100%;
+    font-family: mBlack;
+    text-align: center;
+    
+}
+
+/* Pie Chart */
+.progress-pie-chart {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  background-color: white;
+  position: relative;
+color: #292929!important;
+}
+.progress-pie-chart.gt-50 {
+  background-color: #81CE97;
+}
+
+.ppc-progress {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    left: calc(50% - 50px);
+    top: calc(50% - 50px);
+    width: 100px;
+    height: 100px;
+    clip: rect(0, 100px, 100px, 50px);
+}
+.ppc-progress .ppc-progress-fill {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    left: calc(50% - 51px);
+    top: calc(50% - 51px);
+    width: 100px;
+    height: 100px;
+    clip: rect(0, 50px, 100px, 0);
+    background: #81CE97;
+    transform: rotate(60deg);
+}
+
+.gt-50 .ppc-progress {
+  clip: rect(0, 50px, 100px, 0);
+}
+.gt-50 .ppc-progress .ppc-progress-fill {
+      clip: rect(0, 100px, 100px, 50px);
+    background: white!important;
+}
+
+.ppc-percents {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    display: table;
+}
+.ppc-percents img{
+    margin-top: 25px;
+}
+.ppc-percents span {
+  display: block;
+  font-size: 2.6em;
+  font-weight: bold;
+  color: #81CE97;
+}
+
+.pcc-percents-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.progress-pie-chart {
+  margin: 50px auto 0;
+}
+
+/* Contact
+============================================================================= */
+
+#contactContainer {
+    text-align: center;
+    width: 80%;
+    padding: 10vh 10% 10vh 15%;
+    background-color: white;
+    height: 80vh;
+    float: right;
+    color: black;
+}
+
+#contactContainer .col-md-3 {
+    width: 25%;
+    float:left;
+}
+#contactTitle {
+    padding: 0 10%;
+    font-family: mHairline;
+    font-size: 32px;
+    color: black;
+    float: left;
+    margin-bottom: 5%;
+}
+
+#contactmainTitle {
+    font-family: mBlack;
+    font-size: 42px;
+    width: 100%;
+    color: #132629;
+    /* padding: 15%; */
+    float: left;
+    margin-bottom: 5%;
+}
+
+.mailbutton {
+    
+    margin: 2vw 0;
+    
+    color: black;
+    
+    border-radius: 50px;
+    transition: all 600ms cubic-bezier(0.8, 0.01, 0.22, 1.09);
+}
+
+.mailbutton a{
+    
+    font-family: mblack;
+    color: #132629;
+    /*transition: all 800ms cubic-bezier(0.01, 0.22, 0.68, 1.18);*/
+    transition: all 600ms cubic-bezier(0.8, 0.01, 0.22, 1.09);
+}
+
+
+.mailbutton:hover i{
+    
+    color: black;
+}
+
+.mailbutton:hover i{
+    box-shadow: rgba(19, 38, 41, 1) 0 0px 0px 50px inset;
+    
+    color: white;
+}
+
+.fa-3x {
+    font-size: 3em;
+    font-size: 3em;
+    box-shadow: rgba(19, 38, 41, 1) 0 0px 0px 1px inset;
+    padding: 20px 25px;
+    border-radius: 50%;
+    transition: all 600ms cubic-bezier(0.8, 0.01, 0.22, 1.09);
+    transition-delay: color 500ms;
+
+}
+
+.fa-envelope{
+    
+    padding: 20px 22px!important;
+}
+
+.conTitle{
+    color:black;
+}
+
+#contactIcons{
+    
+    float: left;
+    margin-top: 10vh;
+    width: 100%;
+}
+
+.conText{
+    
+    font-family: mBlack;
+    color: black;
+    font-size: 10px;
+}
+
+/*=============================================================================
+responsive
+============================================================================= */
+
+@media (max-width:1064px){
+
+    .container{
+        
+        width: 100%;
+    }
+    
+    .conText{
+    
+    font-family: mBlack;
+    color: black;
+    font-size: 0.97vw;
+}
+    
+@media (max-width:900px){
+
+    #contactContainer {
+    
+    width: 84%;
+    
+    
+}
+        
+    }    
+
+@media (max-width:768px){
+
+    .container{
+        
+        width: 100%;
+    }
+    
+   .bannerhead b {
+    font-size: 24px;
+}
+      .bannerhead{
+        margin: 0;
+    margin-top: 34vh;
+}
+    
+       .banner{
+    font-size: 24px;
+}
+    #projectList li a {
+        
+        font-size: 2vw;
+        margin-right: -20px;
+    }
+    
+    .carousel-control.right {
+    width: 40%;
+}
+    
+    #viewProjectSection {
+        
+        width: 40%;
+        right: -8%;
+    }
+    
+   .img-responsive-w {
+    
+    min-height: 80vh!important;
+    max-width: 150%!important;
+    min-width: 100%;
+    max-height: 200%;
+}
+    
+    .navbar-brand {
+    margin-left: 15px!important;
+    font-size: 24px;
+    margin-top: 0;
+}
+    
+   .navbar-toggle {
+    margin-right: 30px;
+    margin-top: 10px;
+    background-color: rgba(0, 0, 0, 0)!important;
+    border: rgba(0, 0, 0, 0);
+}
+.navbar-collapse.in {
+    top: 0;
+    height: 100vh;
+    position: absolute;
+    z-index: 200;
+    opacity: 1;
+    margin-left: -1px!important;
+    margin-right: -1px;
+    width: 101%;
+    margin: 0px;
+    max-height: none;
+    background: rgba(0, 0, 0, 1);
+}
+    
+    
+    .projectButton a{
+        font-size: 24px;
+    }
+    
+      .conText{
+    
+    display: none;
+}
+    
+}
+
+@media (max-width:500px){  
+    
+    .page.ng-enter, 
+.page.ng-leave
+{ 
+    -webkit-transition: 0.4s cubic-bezier(1, -0.1, 0.44, 1.32) all;
+    -moz-transition:  0.4s cubic-bezier(1, -0.1, 0.44, 1.32) all;
+    -ms-transition:  0.4s cubic-bezier(1, -0.1, 0.44, 1.32) all;
+    -o-transition: 0.4s cubic-bezier(1, -0.1, 0.44, 1.32) all;
+    transition: 0.4s cubic-bezier(1, -0.1, 0.44, 1.32) all;
+} 
+    
+    #aboutContainer {
+       right: 0;
+    top: 0;
+    
+    text-align: center;
+    width: 100%;
+    padding: 10vh 0% 10vh 0%;
+    background-color: rgb(255, 255, 255);
+}
+    #skills {
+   
+    margin-left: 0;
+}
+    .about{
+        display: none;
+    }
+    #back-btn {
+    margin-top: 1.2%;
+    display: block;
+    position: absolute;
+    text-align: center;
+    width: 50px;
+    height: 100%;
+    font-size: 4vh;
+}
+    #navTitle{
+    text-align: center;
+    width: 100%;
+    float: left;
+    position: absolute;
+    top: 0;
+    padding-top: 1.2%;
+    
+        
+        
+    font-family: mBlack;
+        text-transform: uppercase;
+    }
+    
+    .overviewText {
+    
+    
+    padding-right: 0px;
+}
+    
+    .home .title{
+        
+        display: block;
+    }
+    
+    .details .title{
+        
+        display: none;
+    }
+    
+    .arrow-left {
+    left: 0;
+    margin-left: 15px;
+}
+
+  #viewProjectSection{        
+            display: none;
+        }
+
+    #carouselSection{
+        right:0;
+        width: 100%;
+    }
+    
+    #footer{
+        
+        height: 0;
+    }
+    
+    .carousel-control.right {
+    width: 15%;
+}
+    #contactContainer {
+    
+    width: 100%;
+    padding: 10vh 5%;
+    
+}
+    #contactmainTitle {
+        
+        font-size: 7vw;
+    }
+    
+    #contactTitle {
+        
+        font-size: 5vh;
+    }
+    
+    .fa-3x {
+    font-size: 7vw!important;
+    }
+    
+    #contactIcons {
+    
+    margin-top: 0;
+    
+}
+    
+    .mobile{
+    
+    display: block;
+}
+    .desktop{
+    
+    display: none;
+}
+    #projectInfo {
+    
+    width: 100%;
+}
+    
+    .arrows{
+    
+    display: block;
+}
+    
+    
+    
+    .projectTitle a b {
+    font-size: 10vw;
+}
+    
+    .img-responsive-w {
+    
+    min-height: 80vh!important;
+    max-width: 120%!important;
+    min-width: 100%;
+    max-height: 200%;
+}
+    .sl-slider-wrapper {
+    z-index: 0;
+    width: 100%;
+    
+}
+    .arrow:hover{
+        color: white;
+    
+    }
+    #projectsmovs {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+    
+    #projectsmovs iframe{
+    
+    margin-left: 0;
+    width: 100%;
+    height: 80vh;
+    
+}
+    #projectdetail .projectBkg {
+    
+    width: 100%;
+    margin-left: 0;
+    overflow: hidden;
+}
+    
+    
+    }
+
+@media (max-width:320px){
+        
+    
+.navbar-brand {
+    font-size: 20px;
+}
+
+.projectDetailView{
+            
+    display: none;
+}
+    
+
+.projectTitle a b {
+    font-size: 6vw;
+}
+    
+}
+
+    
+    
+
+
+    
+    
+    
+    
+    
+    
+    
+
